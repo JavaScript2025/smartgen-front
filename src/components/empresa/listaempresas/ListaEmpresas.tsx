@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
 import type Empresa from "../../../models/Empresa";
 import { buscar } from "../../../services/Service";
 import CardEmpresa from "../cardempresa/CardEmpresa";
-import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { ToastAlerta } from "../../../assets/utils/ToastAlerta";
+
 
 function ListaEmpresas() {
 
-    const navigate = useNavigate();
-
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    const [postagens, setPEmpresas] = useState<Empresa[]>([])
+    const [empresas, setEmpresas] = useState<Empresa[]>([])
 
     /*const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
@@ -37,7 +35,7 @@ function ListaEmpresas() {
         } catch (error: any) {
             ToastAlerta("Erro ao buscar empresas","erro")
             }
-        }finally {
+        finally {
             setIsLoading(false)
         }
     }

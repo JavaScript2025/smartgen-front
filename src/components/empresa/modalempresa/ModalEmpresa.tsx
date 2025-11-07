@@ -1,29 +1,22 @@
 import Popup from "reactjs-popup";
-
 import "reactjs-popup/dist/index.css";
-import FormPostagem from "../formempresa/FormEmpresa";
+import FormEmpresa from "../formempresa/FormEmpresa";
+// import FormEmpresa from "../formempresa/FormEmpresa";
 
-
-function ModalPostagem(){
-    return(
-        <>
-        <Popup
-        trigger={
-            <button
-            className="border rounded px-4 py-2 hover:bg-white hover:text-indigo-800">
-                Nova Postagem
-            </button>
-        }
-        modal
-        contentStyle={{
-            borderRadius: '1rem',
-            paddingBottom: '2rem'
-        }}
-        >
-            <FormPostagem />
-        </Popup>
-        </>
-    );
+function ModalEmpresa({ open, onClose }) {
+  return (
+    <Popup
+      open={open}
+      onClose={onClose}
+      modal
+      contentStyle={{
+        borderRadius: "1rem",
+        paddingBottom: "2rem",
+      }}
+    >
+      <FormEmpresa />
+    </Popup>
+  );
 }
 
-export default ModalPostagem;
+export default ModalEmpresa;

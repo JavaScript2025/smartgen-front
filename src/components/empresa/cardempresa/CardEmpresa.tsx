@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import type Empresa from "../../../models/Empresas"
+import type Empresa from "../../../models/Empresa"
 
 interface CardEmpresasProps {
     empresa: Empresa

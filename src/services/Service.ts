@@ -21,19 +21,17 @@ export const login = async (url: string, dados: Object, setData: Function) => {
 export const buscar = async (
   url: string,
   setDados: Function,
-  header: Object
 ) => {
-  const resposta = await api.get(url, header);
+  const resposta = await api.get(url);
   setDados(resposta.data);
 };
 
 export const cadastrar = async (
   url: string,
   dados: Object,
-  setDados: Function,
-  header: Object
+  setDados: Function
 ) => {
-  const resposta = await api.post(url, dados, header);
+  const resposta = await api.post(url, dados);
   setDados(resposta.data);
 };
 
@@ -41,14 +39,14 @@ export const atualizar = async (
   url: string,
   dados: Object,
   setDados: Function,
-  header: Object
+  
 ) => {
-  const resposta = await api.put(url, dados, header);
+  const resposta = await api.put(url, dados);
   setDados(resposta.data);
 };
 
-export const deletar = async (url: string, header: Object) => {
-  await api.delete(url, header);
+export const deletar = async (url: string) => {
+  await api.delete(url);
 };
 
 export default api;
